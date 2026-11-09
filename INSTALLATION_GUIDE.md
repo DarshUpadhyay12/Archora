@@ -194,3 +194,4 @@ Archora supports 1-click cloud backup of your SQLite projects and database direc
 ---
 
 🏛️ **Happy Designing with Archora Studio!**
+

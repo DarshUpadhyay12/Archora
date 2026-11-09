@@ -107,13 +107,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom copyright line */}
+        {/* Bottom footer line */}
         <div className="mt-12 pt-8 border-t border-archBorder/40 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-faint gap-4">
-          <p>© 2026 Archora Workspace. All rights reserved. Designed for architectural education.</p>
-          <div className="flex items-center gap-6">
-            <span>Parchment Edition 1.0</span>
-            <span>Local Windows Ready</span>
-          </div>
+          <p className="font-serif text-sm tracking-wide text-ink">
+            Developed by <span className="text-espresso font-semibold">Darsh Upadhyay</span>
+          </p>
         </div>
       </div>
     </footer>

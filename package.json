@@ -14,7 +14,9 @@
     "typecheck": "tsc --noEmit",
     "setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-archora.ps1",
     "test:windows": "powershell -ExecutionPolicy Bypass -File scripts/test-deployment.ps1",
-    "test:qa": "tsx scripts/run-full-qa.ts"
+    "test:qa": "tsx scripts/run-full-qa.ts",
+    "git:sync": "powershell -ExecutionPolicy Bypass -File scripts/git-sync.ps1",
+    "git:watch": "powershell -ExecutionPolicy Bypass -File scripts/watch-and-sync.ps1"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",
