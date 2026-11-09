@@ -49,3 +49,4 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "[ERROR] Failed to push to GitHub. Please check internet connection." -ForegroundColor Red
     exit 1
 }
+

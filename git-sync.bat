@@ -12,3 +12,4 @@ if %EXIT_CODE% NEQ 0 (
     pause
 )
 exit /b %EXIT_CODE%
+

@@ -144,13 +144,17 @@ Or simply double-click `setup-archora.bat` again.
 Archora uses Google's latest `gemini-3.5-flash-lite` model for 100% free studio tutoring, design concept generation, jury defense prep, and Vastu analysis.
 
 1. Visit [Google AI Studio](https://aistudio.google.com/).
-2. Sign in with your Google Account and click **"Create API Key"**.
-3. Open your `.env` file in the Archora folder.
-4. Paste your key:
-   ```env
-   GEMINI_API_KEY=AIzaSy...
-   ```
-5. Save the file.
+2. Sign in with your Google Account and click **"Create API Key"** (100% free, no credit card required).
+3. **Save your key into Archora using either method:**
+   - **Option 1 (Easiest — No code editor needed)**:  
+     Double-click **`configure-key.bat`** in the Archora folder, paste your key, and press Enter!
+   - **Option 2 (Using Windows Notepad)**:  
+     Right-click the `.env` file in the Archora folder ➔ Select **Open with** ➔ Choose **Notepad**.  
+     Paste your key:
+     ```env
+     GEMINI_API_KEY=AIzaSy...
+     ```
+     Click **File ➔ Save**.
 *(Note: Your API key is strictly stored locally on your machine and is NEVER committed to git or exposed to clients).*
 
 ---
