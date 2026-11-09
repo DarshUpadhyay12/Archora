@@ -139,22 +139,49 @@ Or simply double-click `setup-archora.bat` again.
 
 ---
 
-## 🔑 AI Configuration (Google Gemini Free Tier)
+## 🔑 AI Configuration (Google Gemini Free Tier — Step-by-Step with Screenshots)
 
 Archora uses Google's latest `gemini-3.5-flash-lite` model for 100% free studio tutoring, design concept generation, jury defense prep, and Vastu analysis.
 
-1. Visit [Google AI Studio](https://aistudio.google.com/).
-2. Sign in with your Google Account and click **"Create API Key"** (100% free, no credit card required).
-3. **Save your key into Archora using either method:**
-   - **Option 1 (Easiest — No code editor needed)**:  
-     Double-click **`configure-key.bat`** in the Archora folder, paste your key, and press Enter!
-   - **Option 2 (Using Windows Notepad)**:  
-     Right-click the `.env` file in the Archora folder ➔ Select **Open with** ➔ Choose **Notepad**.  
-     Paste your key:
-     ```env
-     GEMINI_API_KEY=AIzaSy...
-     ```
-     Click **File ➔ Save**.
+> [!NOTE]
+> **Is this free?** **YES!** Google provides a free Gemini API tier for everyone with a regular Google/Gmail account. **No credit card, no debit card, and zero payment required.**
+
+### Step 1: Open Google AI Studio
+1. Open your web browser (Chrome, Edge, etc.).
+2. Go directly to: 👉 **[https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)**  
+   *(Or search for `google api key` on Google and click the first result: "Google AI Studio API Key")*
+3. Sign in with your regular Google / Gmail account.
+
+![Step 1 - Google Search for Google AI Studio](docs/images/api-setup/step1_google_search.jpg)
+
+### Step 2: Click the "+ Create API key" Button
+1. In the Google AI Studio dashboard, look at the **top right corner**.
+2. Click the button that says **`+ Create API key`**.
+
+![Step 2 - Google AI Studio Dashboard](docs/images/api-setup/step2_ai_studio_dashboard.png)
+
+### Step 3: Name Your Key & Click "Create key"
+1. In the popup dialog, type **`Archora`** under **"Name your key"**.
+2. Keep **`Gemini API`** selected as the project.
+3. Click the **`Create key`** button.
+
+![Step 3 - Name Key and Click Create key](docs/images/api-setup/step3_create_new_key_modal.png)
+
+### Step 4: Copy Your Secret Key
+1. In the "API key details" box, click the **`Copy key`** button.
+2. Your key is now copied to your clipboard!
+
+### Step 5: Save your key into Archora (Choose Method A or B)
+* **Method A (Easiest — No code editor needed)**:  
+  Double-click **`configure-key.bat`** in the Archora folder, paste your key with `Ctrl + V`, and press **Enter**!
+* **Method B (Using Windows Notepad)**:  
+  Right-click the `.env` file in the Archora folder ➔ Select **Open with** ➔ Choose **Notepad**.  
+  Paste your key:
+  ```env
+  GEMINI_API_KEY=AIzaSy...your_copied_key_here
+  ```
+  Click **File ➔ Save**.
+
 *(Note: Your API key is strictly stored locally on your machine and is NEVER committed to git or exposed to clients).*
 
 ---

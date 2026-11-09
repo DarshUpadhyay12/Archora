@@ -35,13 +35,13 @@ export const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            
+
             {/* Left Column: Hero Text & Actions */}
             <div className="lg:col-span-7 xl:col-span-7 space-y-7">
               {/* Kicker badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-espresso text-xs font-semibold tracking-[0.16em] uppercase shadow-arch-sm">
                 <Sparkles className="w-3.5 h-3.5 text-espresso" />
-                <span>INTELLIGENT ARCHITECTURE WORKSPACE</span>
+                <span>A WORKSPACE FOR ARCHITECT</span>
               </div>
 
               {/* Main Headline */}
@@ -115,31 +115,28 @@ export const Home: React.FC = () => {
                 <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-parchment/50 border border-archBorder/40">
                   <button
                     onClick={() => setActivePreviewTab('precedents')}
-                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${
-                      activePreviewTab === 'precedents'
-                        ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
-                        : 'text-ink-muted hover:text-ink'
-                    }`}
+                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${activePreviewTab === 'precedents'
+                      ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
+                      : 'text-ink-muted hover:text-ink'
+                      }`}
                   >
                     Tutor Precedents
                   </button>
                   <button
                     onClick={() => setActivePreviewTab('concepts')}
-                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${
-                      activePreviewTab === 'concepts'
-                        ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
-                        : 'text-ink-muted hover:text-ink'
-                    }`}
+                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${activePreviewTab === 'concepts'
+                      ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
+                      : 'text-ink-muted hover:text-ink'
+                      }`}
                   >
                     Concepts
                   </button>
                   <button
                     onClick={() => setActivePreviewTab('jury')}
-                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${
-                      activePreviewTab === 'jury'
-                        ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
-                        : 'text-ink-muted hover:text-ink'
-                    }`}
+                    className={`flex-1 py-1.5 px-2 text-xs font-medium rounded-xl transition-all ${activePreviewTab === 'jury'
+                      ? 'bg-cream text-espresso shadow-arch-sm font-semibold'
+                      : 'text-ink-muted hover:text-ink'
+                      }`}
                   >
                     Jury Critique
                   </button>
@@ -232,7 +229,7 @@ export const Home: React.FC = () => {
                 Interactive 3D Workspace
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-medium text-ink leading-tight">
-                Real-Time Tectonic & Spatial Projection
+                Real-Time Tectonic & Spatial Projection(This is for timepass)
               </h2>
               <p className="text-sm text-ink-muted leading-relaxed">
                 Interact directly with architectural massing, structural glass slabs, and passive solar atrium cores. Drag to orbit, toggle wireframe blueprints, or explode floor plates into distinct structural layers.
@@ -294,7 +291,7 @@ export const Home: React.FC = () => {
       <section className="py-24 bg-parchment/60 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-espresso/80">
                 Studio Philosophy

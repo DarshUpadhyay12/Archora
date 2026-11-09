@@ -90,6 +90,71 @@ After the initial setup, you never have to touch a terminal:
 
 ---
 
+## 🔑 How to Get Your 100% Free Gemini API Key (Step-by-Step with Screenshots)
+
+> [!NOTE]
+> **Is this free?** **YES!** Google provides a free Gemini API tier for everyone with a regular Google/Gmail account. **No credit card, no debit card, and zero money required.**
+
+If you or a friend are doing this for the first time, follow these simple steps:
+
+---
+
+### Step 1: Open Google AI Studio
+1. Open your web browser (Chrome, Edge, etc.).
+2. Go directly to: 👉 **[https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)**  
+   *(Or search for `google api key` on Google and click the first result: "Google AI Studio API Key")*
+3. Sign in with your regular Google / Gmail account.
+
+![Step 1 - Google Search for Google AI Studio](docs/images/api-setup/step1_google_search.jpg)
+
+---
+
+### Step 2: Click the "+ Create API key" Button
+1. Once you are logged into Google AI Studio, look at the **top right corner**.
+2. Click the button that says **`+ Create API key`**.
+
+![Step 2 - Google AI Studio Dashboard](docs/images/api-setup/step2_ai_studio_dashboard.png)
+
+---
+
+### Step 3: Name Your Key and Click "Create key"
+1. A small dialog popup will appear titled **"Create a new key"**.
+2. Under **"Name your key"**, type **`Archora`** (or any name you like).
+3. Under **"Choose an imported project"**, keep **`Gemini API`** selected.
+4. Click the dark button at the bottom: **`Create key`**.
+
+![Step 3 - Name Key and Click Create key](docs/images/api-setup/step3_create_new_key_modal.png)
+
+---
+
+### Step 4: Copy Your Secret Key
+1. A popup titled **"API key details"** will appear displaying your new key.
+2. Click the **`Copy key`** button at the bottom right.
+3. Your key is now copied to your clipboard!
+
+---
+
+### Step 5: Put the Key into Archora (Choose Method A or B)
+
+#### 🌟 Method A: 1-Click Auto Setup (Easiest — No code editing!)
+1. Open the **Archora** folder on your computer.
+2. Double-click the file named **`configure-key.bat`**.
+3. In the black window that opens, **paste your key** (press `Ctrl + V` or right-click) and press **`Enter`**.
+4. That's it! The script automatically saves it into your configuration.
+
+#### 📝 Method B: Using Windows Notepad
+1. Open the **Archora** folder in File Explorer.
+2. Right-click the **`.env`** file ➔ click **"Open with"** ➔ select **"Notepad"**.
+3. Find the line `GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE` and replace `YOUR_GEMINI_API_KEY_HERE` with your copied key:
+   ```env
+   GEMINI_API_KEY=AIzaSy...your_copied_key_here
+   ```
+4. Click **File ➔ Save** (or press `Ctrl + S`), then close Notepad.
+
+Now double-click the **`Archora`** desktop shortcut and enjoy all AI features!
+
+---
+
 ## ⚙️ Configuration (.env)
 
 Archora runs out-of-the-box with sensible defaults. To enable AI studio tutoring and Google Drive cloud backups, configure `.env` (copied from `.env.example`):
