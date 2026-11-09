@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies & Build artifacts
+node_modules/
+dist/
+dist-ssr/
+server/dist/
+*.tsbuildinfo
+*.local
+
+# Environment variables & API credentials (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# SQLite Databases & Local Storage
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+test_*.db
+test_*.png
+test_*.jpg
+test_anchora_*
+test_archora_*
+
+# Backups & Local Uploads
+backups/
+uploads/
+server/uploads/
+
+# Temporary files & Screenshots
+navbar_preview.png
+navbar_live_glass.png
+
+# Editor & System Files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,42 @@
+name: Archora Studio CI & QA Quality Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  qa-gate:
+    name: Build, Lint & Automated Test Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: TypeScript Type Checking
+        run: npx tsc --noEmit
+
+      - name: Production Bundle Build
+        run: npm run build
+
+      - name: Execute Full Integration & Security Test Suites
+        run: npm test
+        env:
+          NODE_ENV: test
+          PORT: 5000
+          HOST: 127.0.0.1
+          JWT_SECRET: test_jwt_secret_ci_32_characters_minimum_archora
+          GOOGLE_DRIVE_FOLDER_ID: test_drive_folder_id_ci
+          GEMINI_MODEL: gemini-3.5-flash-lite
+

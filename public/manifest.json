@@ -1,0 +1,73 @@
+{
+  "id": "/",
+  "name": "Archora — Intelligent Architecture Workspace",
+  "short_name": "Archora",
+  "description": "Universal intelligent architecture workspace synthesizing historical precedents, climate-responsive concepts, and studio project archives.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#F3E5CF",
+  "theme_color": "#482A18",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "design"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/arch-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Architecture Tutor",
+      "short_name": "Tutor",
+      "description": "Inquire into architectural precedents and historical theory",
+      "url": "/tutor?source=pwa_shortcut",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Concept Generator",
+      "short_name": "Concepts",
+      "description": "Synthesize climate-responsive design concepts",
+      "url": "/concepts?source=pwa_shortcut",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Project Library",
+      "short_name": "Projects",
+      "description": "View and manage studio projects and critique notes",
+      "url": "/projects?source=pwa_shortcut",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Architectural File Vault",
+      "short_name": "Files",
+      "description": "Access architectural sheets, drawings, and documents",
+      "url": "/files?source=pwa_shortcut",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
+

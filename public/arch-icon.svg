@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Outer Arch Contour -->
+  <path d="M12 56V26C12 14.9543 20.9543 6 32 6C43.0457 6 52 14.9543 52 26V56" stroke="#482A18" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner Arch Contour -->
+  <path d="M22 56V28C22 22.4772 26.4772 18 32 18C37.5228 18 42 22.4772 42 28V56" stroke="#482A18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Keystone / Center Architectural Accent -->
+  <path d="M30 11H34V18H30Z" fill="#482A18"/>
+  <!-- Plinth / Base Line -->
+  <line x1="8" y1="56" x2="56" y2="56" stroke="#482A18" stroke-width="4" stroke-linecap="round"/>
+</svg>
+

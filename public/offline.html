@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archora — Studio Connection Paused</title>
+    <style>
+      :root {
+        --color-parchment: #F3E5CF;
+        --color-cream: #FAF4EA;
+        --color-espresso: #482A18;
+        --color-ink: #241A14;
+        --color-ink-muted: #5E4E42;
+        --color-border: #C9B49A;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background-color: var(--color-parchment);
+        color: var(--color-ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+      }
+      .card {
+        background: rgba(250, 244, 234, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(72, 42, 24, 0.15);
+        border-radius: 28px;
+        padding: 44px 32px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 12px 36px rgba(72, 42, 24, 0.08);
+      }
+      .logo-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 20px auto;
+        display: block;
+      }
+      .kicker {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        background: rgba(72, 42, 24, 0.08);
+        border: 1px solid rgba(72, 42, 24, 0.15);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-espresso);
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-family: "Georgia", "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-ink);
+        margin-bottom: 12px;
+        line-height: 1.25;
+      }
+      p {
+        color: var(--color-ink-muted);
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .retry-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 28px;
+        background: var(--color-espresso);
+        color: #FAF4EA;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 9999px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+        text-decoration: none;
+      }
+      .retry-btn:hover {
+        background: #331D11;
+        transform: translateY(-1px);
+      }
+      .status-pill {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 11px;
+        color: #8C7355;
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(201, 180, 154, 0.4);
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #EAB308;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+        <path d="M12 56V26C12 14.9543 20.9543 6 32 6C43.0457 6 52 14.9543 52 26V56" stroke="#482A18" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 56V28C22 22.4772 26.4772 18 32 18C37.5228 18 42 22.4772 42 28V56" stroke="#482A18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M30 11H34V18H30Z" fill="#B45309"/>
+        <line x1="8" y1="56" x2="56" y2="56" stroke="#482A18" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="kicker">Studio Network Notice</span>
+      <h1>Studio Offline</h1>
+      <p>
+        Your device is currently disconnected from the network. Archora will automatically reconnect your studio session as soon as internet access is restored.
+      </p>
+      <button class="retry-btn" onclick="window.location.reload()">
+        Retry Connection
+      </button>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Local architectural data preserved safely</span>
+      </div>
+    </div>
+  </body>
+</html>
+
