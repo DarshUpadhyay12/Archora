@@ -34,7 +34,7 @@ export const OfflineNotice: React.FC = () => {
       <div className="flex items-center gap-2 max-w-2xl mx-auto flex-1">
         <WifiOff className="w-4 h-4 text-amber-300 flex-shrink-0 animate-pulse" />
         <span className="leading-tight">
-          <strong>Offline Mode Active</strong> — Your cached architectural data remains accessible. Live AI synthesis will resume when connection returns.
+          <strong>Offline Mode Active</strong> — Your cached architectural data is safe. Live AI synthesis is taking a nap until Wi-Fi returns. Time to sketch on tracing paper like the ancients 📐
         </span>
       </div>
       <button

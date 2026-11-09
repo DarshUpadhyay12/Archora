@@ -19,11 +19,11 @@ export const Features: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Page Heading */}
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <PageHeading
-            kicker="INTEGRATED STUDIO SUITE"
-            title="Powerful Tools for Every Stage"
-            description="Archora empowers your workflow from historical precedent research to design ideation, portfolio curation, and jury critique in one cohesive studio environment."
+            kicker="STUDIO CAPABILITIES · ZERO COST"
+            title="Every tool you need to cook up an award-winning project."
+            description="From parametric 3D massing and Vastu directional grids to jury defense rehearsals and 1-click Google Drive backups."
           />
         </div>
 

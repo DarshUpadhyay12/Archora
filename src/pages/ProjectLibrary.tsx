@@ -33,6 +33,7 @@ import { showToast } from '@/components/common/Toast';
 import { storageService } from '@/services/storageService';
 import { apiClient, ProjectNoteResponse, SavedOutputResponse, FileResponse } from '@/services/apiClient';
 import { Project, ProjectCategory } from '@/types';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const ProjectLibrary: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -1004,9 +1005,9 @@ export const ProjectLibrary: React.FC = () => {
             {/* Page Heading & Actions */}
             <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-archBorder/50 gap-6">
               <PageHeading
-                kicker="STUDIO ARCHIVE & REPOSITORY"
-                title="Project Library"
-                description="Manage your architecture studio projects across semesters, archive drawings and sheets, and connect AI-generated concepts to design boards."
+                kicker={GENZ_VOICE.pageHeaders.projects.kicker}
+                title={GENZ_VOICE.pageHeaders.projects.title}
+                description={GENZ_VOICE.pageHeaders.projects.subtitle}
               />
 
               <PrimaryButton
@@ -1136,13 +1137,15 @@ export const ProjectLibrary: React.FC = () => {
                   <FolderKanban className="w-8 h-8" />
                 </div>
                 <div className="space-y-1.5">
-                  <h3 className="font-serif text-2xl font-medium text-ink">Your Studio Library is Empty</h3>
+                  <h3 className="font-serif text-2xl font-medium text-ink">
+                    {GENZ_VOICE.emptyStates.projects.title}
+                  </h3>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed max-w-md mx-auto">
-                    Create your first architectural project to record your design briefs, site parameters, and connect AI concept generation.
+                    {GENZ_VOICE.emptyStates.projects.message}
                   </p>
                 </div>
                 <PrimaryButton icon={<Plus className="w-4 h-4" />} onClick={openCreateModal} className="mt-2">
-                  Create First Project
+                  {GENZ_VOICE.emptyStates.projects.action}
                 </PrimaryButton>
               </div>
             ) : viewMode === 'grid' ? (

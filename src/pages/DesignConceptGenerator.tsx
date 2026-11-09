@@ -30,6 +30,7 @@ import { aiService } from '@/services/aiService';
 import { storageService } from '@/services/storageService';
 import { apiClient, SavedOutputResponse, ProjectResponse } from '@/services/apiClient';
 import { ConceptInput, ConceptResult } from '@/types';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const DesignConceptGenerator: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -365,9 +366,9 @@ export const DesignConceptGenerator: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-archBorder/50">
           <div className="max-w-2xl">
             <PageHeading
-              kicker="GENERATIVE DESIGN ENGINE"
-              title="Design Concept Generator"
-              description="Translate your studio briefs, site constraints, and climate factors into rigorously articulated architectural concepts with spatial, circulation, and tectonic clarity."
+              kicker={GENZ_VOICE.pageHeaders.concepts.kicker}
+              title={GENZ_VOICE.pageHeaders.concepts.title}
+              description={GENZ_VOICE.pageHeaders.concepts.subtitle}
             />
           </div>
 
@@ -545,7 +546,10 @@ export const DesignConceptGenerator: React.FC = () => {
           <div className="lg:col-span-7">
             {isLoading ? (
               <div className="glass-panel rounded-3xl p-12 text-center shadow-glass">
-                <LoadingState message="Synthesizing architectural narrative, structural tectonics, and spatial zonings with Gemini..." />
+                <LoadingState
+                  message={GENZ_VOICE.loadingMessages.concept}
+                  subtext="Synthesizing spatial programs, ventilation axes, and structural tectonics..."
+                />
               </div>
             ) : result ? (
               <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-glass space-y-6 animate-fadeIn">
@@ -797,10 +801,10 @@ export const DesignConceptGenerator: React.FC = () => {
                 </div>
                 <div className="space-y-1.5">
                   <h3 className="font-serif text-2xl font-semibold text-ink">
-                    Design Concept Workspace
+                    Ready to Cook Up a Concept 🔥
                   </h3>
                   <p className="text-sm text-ink-muted max-w-md mx-auto leading-relaxed">
-                    Provide your project parameters on the left and click <strong>Generate Architectural Concept</strong> to synthesize architectural narratives, spatial zoning, and climate-responsive material strategies.
+                    Fill in your site parameters on the left and let Archora turn your vague sketch ideas into actual buildable zoning, circulation vectors, and tectonic palettes.
                   </p>
                 </div>
                 <div className="pt-2 flex flex-wrap justify-center gap-2 text-xs text-taupe font-mono">

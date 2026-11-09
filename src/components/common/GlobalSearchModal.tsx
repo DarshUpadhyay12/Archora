@@ -82,7 +82,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search tools, architectural topics, projects, or guides..."
+            placeholder="Search tools, 3 AM ideas, projects, or sanity (e.g. cantilever, Corbusier)..."
             className="w-full bg-transparent text-ink placeholder-taupe/80 text-base focus:outline-none"
           />
           {query && (
@@ -198,9 +198,9 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
           {matchedTools.length === 0 && matchedTopics.length === 0 && matchedProjects.length === 0 && (
             <div className="py-12 text-center text-ink-muted">
               <Search className="w-8 h-8 mx-auto text-taupe/60 mb-2" />
-              <p className="font-medium">No results found for "{query}"</p>
+              <p className="font-medium font-serif text-lg">No architectural artifacts found for "{query}" 💀</p>
               <p className="text-xs text-ink-faint mt-1">
-                Try searching for "temple", "gothic", "stepwell", "viva", or "concept".
+                Try searching for "cantilever", "tutor", "vastu", "mandala", or "concepts".
               </p>
             </div>
           )}

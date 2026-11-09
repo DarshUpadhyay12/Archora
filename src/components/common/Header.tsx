@@ -14,6 +14,7 @@ import { PrimaryButton } from './Buttons';
 import { GlobalSearchModal } from './GlobalSearchModal';
 import { storageService, AuthSession } from '@/services/storageService';
 import { showToast } from './Toast';
+import { getStudioMood } from '@/config/genzVoice';
 
 interface HeaderProps {
   onOpenSearch?: () => void;
@@ -211,11 +212,19 @@ export const Header: React.FC<HeaderProps> = () => {
             <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3 pl-3 sm:pl-4 lg:pl-6 md:border-l border-archBorder/30">
               {session ? (
                 <>
+                  {/* Subtle Studio Mood Pill */}
+                  <div
+                    className="hidden 2xl:flex items-center px-3 py-1 rounded-full bg-parchment/70 border border-archBorder/50 text-[11px] font-mono text-espresso/90 shadow-2xs select-none"
+                    title="Real-time studio state"
+                  >
+                    {getStudioMood()}
+                  </div>
+
                   {/* Search Button with keyboard shortcut hint */}
                   <button
                     onClick={() => setSearchOpen(true)}
                     aria-label="Search Archora"
-                    title="Quick Search (Press /)"
+                    title="Quick Search (Press / to search concepts, drawings & sanity)"
                     className="p-2 sm:px-3 sm:py-1.5 rounded-full text-espresso hover:text-chocolate glass-button-pill flex items-center gap-2"
                   >
                     <Search className="w-4 h-4 text-espresso/80" />
@@ -229,7 +238,7 @@ export const Header: React.FC<HeaderProps> = () => {
                   <NavLink
                     to="/profile"
                     className="flex items-center gap-2.5 px-3 py-1.5 rounded-full glass-button-pill"
-                    title="Open Studio Profile & Preferences"
+                    title="POV: Starchitect in training · Profile & Preferences"
                   >
                     <span className="w-6 h-6 rounded-full bg-espresso text-cream flex items-center justify-center text-[11px] font-semibold font-serif shadow-xs">
                       {session.name.charAt(0).toUpperCase()}
@@ -243,7 +252,7 @@ export const Header: React.FC<HeaderProps> = () => {
                   <button
                     onClick={handleLogout}
                     className="p-2 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium text-ink-muted hover:text-rose-700 bg-white/40 hover:bg-rose-50/90 backdrop-blur-md border border-archBorder/30 hover:border-rose-200 shadow-2xs transition-all flex items-center gap-1.5"
-                    title="Log out of your studio session"
+                    title="Escape studio before another revision"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span className="hidden sm:inline">Log Out</span>

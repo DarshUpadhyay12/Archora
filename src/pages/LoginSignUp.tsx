@@ -125,12 +125,12 @@ export const LoginSignUp: React.FC = () => {
             <span>Studio Access Required</span>
           </div>
           <h2 className="text-3xl font-serif font-medium text-ink pt-1">
-            {activeTab === 'signin' ? 'Welcome to Archora' : 'Join the Studio'}
+            {activeTab === 'signin' ? 'Welcome back, future starchitect.' : 'Join the Studio.'}
           </h2>
           <p className="text-xs text-ink-muted">
             {activeTab === 'signin'
-              ? 'Sign in to access the AI Architecture Workspace & tools.'
-              : 'Create an account to personalize your architectural workspace.'}
+              ? 'Sign in to access your local workspace, project library, and jury prep.'
+              : 'Join fellow architecture students. 100% free, zero billing surprises.'}
           </p>
         </div>
 

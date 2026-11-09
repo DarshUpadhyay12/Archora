@@ -29,6 +29,7 @@ import {
   SavedOutputResponse, 
   ProjectResponse 
 } from '@/services/apiClient';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 type HistoryCategory = 'all' | 'tutor' | 'concept' | 'jury' | 'portfolio';
 
@@ -291,9 +292,9 @@ export const AIHistory: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-archBorder/50">
           <div className="max-w-2xl">
             <PageHeading
-              kicker="PERSISTENT STUDIO ARCHIVE"
-              title="AI History & Saved Outputs"
-              description="Review, reopen, rename, and organize all your genuine Gemini tutor conversations, synthesized design concepts, and jury defense assets stored in SQLite."
+              kicker={GENZ_VOICE.pageHeaders.history.kicker}
+              title={GENZ_VOICE.pageHeaders.history.title}
+              description={GENZ_VOICE.pageHeaders.history.subtitle}
             />
           </div>
 
@@ -387,12 +388,12 @@ export const AIHistory: React.FC = () => {
             </div>
             <div className="space-y-1.5 max-w-md mx-auto">
               <h3 className="font-serif text-2xl font-semibold text-ink">
-                No History Found
+                {GENZ_VOICE.emptyStates.history.title}
               </h3>
               <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
                 {searchQuery || activeCategory !== 'all' || selectedProjectId !== 'all'
                   ? 'No archived items match your current filter criteria. Try resetting your search.'
-                  : 'Start by asking the Architecture Tutor a question, generating a Design Concept, or preparing for your Jury Viva.'}
+                  : GENZ_VOICE.emptyStates.history.message}
               </p>
             </div>
             <div className="flex justify-center gap-3 pt-2">

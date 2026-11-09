@@ -12,14 +12,14 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-1 space-y-4">
             <AnchoraLogo size="md" />
             <p className="text-xs leading-relaxed text-ink-muted">
-              Archora is an intelligent architecture workspace dedicated to architecture students.
-              Synthesizing historical architectural knowledge, generative design concepts, jury preparation,
-              and studio project archiving.
+              Archora is the architecture studio companion that understands your design ambitions,
+              your jury trauma, and your 47 versions of the same floor plan. Combining classical treatises
+              with 100% free Gemini AI and VastuVision.
             </p>
-            <div className="flex items-center gap-3 pt-2 text-espresso text-xs font-medium">
+            <div className="flex flex-wrap items-center gap-2 pt-2 text-espresso text-[11px] font-mono">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-beige/60 border border-archBorder/60">
-                <Sparkles className="w-3 h-3" />
-                Local Studio Ready
+                <Sparkles className="w-3 h-3 text-espresso" />
+                No Revit Crashes Recorded
               </span>
             </div>
           </div>
@@ -112,6 +112,11 @@ export const Footer: React.FC = () => {
           <p className="font-serif text-sm tracking-wide text-ink">
             Developed by <span className="text-espresso font-semibold">Darsh Upadhyay</span>
           </p>
+          <div className="flex items-center gap-4 text-[11px] text-taupe font-mono">
+            <span>Powered by Caffeine & Vitruvian Principles</span>
+            <span className="hidden sm:inline">·</span>
+            <span className="hidden sm:inline">Zero Billing Guaranteed</span>
+          </div>
         </div>
       </div>
     </footer>

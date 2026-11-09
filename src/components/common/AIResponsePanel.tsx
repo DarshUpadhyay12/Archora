@@ -62,7 +62,7 @@ export const AIResponsePanel: React.FC<AIResponsePanelProps> = ({
       showToast({
         type: 'success',
         title: 'Copied to Clipboard',
-        message: 'Architectural analysis copied to your clipboard.',
+        message: 'Analysis copied! Ready for presentation slides or jury notes 📋',
       });
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -75,8 +75,8 @@ export const AIResponsePanel: React.FC<AIResponsePanelProps> = ({
     if (onSave) onSave();
     showToast({
       type: 'success',
-      title: savedLocal ? 'Removed from Saved' : 'Saved to Studio Notes',
-      message: savedLocal ? 'Item removed from your study notes.' : 'Item bookmarked in your study session.',
+      title: savedLocal ? 'Removed from Vault' : 'Saved to Studio Vault',
+      message: savedLocal ? 'Removed from saved outputs. Rip to that iteration 💀' : 'Saved to studio notes. Character development 💾',
     });
   };
 
@@ -95,7 +95,7 @@ export const AIResponsePanel: React.FC<AIResponsePanelProps> = ({
               {title || 'Archora Studio Synthesis'}
             </h4>
             <span className="text-[11px] text-taupe font-mono">
-              Archora Architectural Precedent Engine
+              Let him cook: AI Studio Synthesis 🔥
             </span>
           </div>
         </div>

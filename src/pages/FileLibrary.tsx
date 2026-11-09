@@ -41,6 +41,7 @@ import {
   StorageOverviewResponse,
   CloudSyncStatusResponse,
 } from '@/services/apiClient';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 const CATEGORIES = [
   'All',
@@ -359,9 +360,9 @@ export const FileLibrary: React.FC = () => {
       {/* Header and New Upload Action */}
       <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-archBorder/50">
         <PageHeading
-          kicker="STUDIO ASSET ARCHIVE"
-          title="File Library"
-          description="Manage drawing sheets, CAD models, site analysis studies, presentation boards, and photographic precedents in one secure workspace."
+          kicker={GENZ_VOICE.pageHeaders.files.kicker}
+          title={GENZ_VOICE.pageHeaders.files.title}
+          description={GENZ_VOICE.pageHeaders.files.subtitle}
         />
 
         <div className="flex items-center gap-3">
@@ -622,14 +623,14 @@ export const FileLibrary: React.FC = () => {
               title={
                 searchQuery || selectedCategory !== 'All' || selectedType !== 'all' || selectedProjectId
                   ? 'No matching architectural files found'
-                  : 'Your Studio File Library is Empty'
+                  : GENZ_VOICE.emptyStates.files.title
               }
               description={
                 searchQuery || selectedCategory !== 'All' || selectedType !== 'all' || selectedProjectId
                   ? 'Try broadening your search query or resetting filters.'
-                  : 'Upload CAD drawings, site analysis maps, elevation sheets, high-resolution renders, and portfolio documents to start building your studio archive.'
+                  : GENZ_VOICE.emptyStates.files.message
               }
-              actionLabel="Upload First File"
+              actionLabel={GENZ_VOICE.emptyStates.files.action}
               onAction={() => setIsUploadModalOpen(true)}
             />
           </div>

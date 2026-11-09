@@ -25,6 +25,7 @@ import { aiService } from '@/services/aiService';
 import { apiClient, ConversationResponse, MessageResponse } from '@/services/apiClient';
 import { TUTOR_TOPICS } from '@/data/mockData';
 import { TutorMessage } from '@/types';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const ArchitectureTutor: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -276,9 +277,9 @@ export const ArchitectureTutor: React.FC = () => {
         {/* Header Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-archBorder/50">
           <PageHeading
-            kicker="AI ARCHITECTURAL TUTOR & CRITIQUE"
-            title="Architecture Tutor"
-            description="Deepen your grasp of architectural history, tectonic theory, building materials, and design principles with contextual guidance tailored for studio reviews."
+            kicker={GENZ_VOICE.pageHeaders.tutor.kicker}
+            title={GENZ_VOICE.pageHeaders.tutor.title}
+            description={GENZ_VOICE.pageHeaders.tutor.subtitle}
           />
 
           <div className="flex items-center gap-3 flex-shrink-0">
@@ -338,22 +339,30 @@ export const ArchitectureTutor: React.FC = () => {
         <div className="space-y-6 min-h-[350px]">
           {messages.length === 0 ? (
             /* Clean Empty State for New Inquiries */
-            <div className="py-20 text-center space-y-4 rounded-3xl border border-dashed border-archBorder/60 glass-panel p-8 shadow-arch-sm">
+            <div className="py-16 text-center space-y-5 rounded-3xl border border-dashed border-archBorder/60 glass-panel p-8 shadow-arch-sm">
               <div className="w-14 h-14 rounded-2xl bg-cream border border-archBorder flex items-center justify-center text-espresso mx-auto shadow-arch-sm">
                 <BookOpen className="w-7 h-7 text-espresso/80" />
               </div>
-              <div className="space-y-1.5 max-w-md mx-auto">
+              <div className="space-y-1.5 max-w-lg mx-auto">
                 <h3 className="font-serif text-2xl font-semibold text-ink">
-                  Ask Any Architectural Question
+                  Ask Anything Without the Professor Side-Eye 👀
                 </h3>
                 <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                  Select a studio topic chip above or type an architectural inquiry below — such as passive cooling principles, Le Corbusier's promenade architecturale, or Dravidian gopuram proportioning.
+                  Select a starter studio dilemma below or ask your own 3 AM structural doubts — from cantilever physics to Corbusier’s Five Points:
                 </p>
               </div>
-              <div className="pt-2 flex flex-wrap justify-center gap-2 text-xs text-taupe font-mono">
-                <span className="px-3 py-1 rounded-full bg-cream border border-archBorder/50">Tectonic Theory</span>
-                <span className="px-3 py-1 rounded-full bg-cream border border-archBorder/50">Precedents</span>
-                <span className="px-3 py-1 rounded-full bg-cream border border-archBorder/50">Material Systems</span>
+              <div className="pt-2 flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
+                {GENZ_VOICE.promptChips.tutor.map((chip, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setInputQuestion(chip);
+                    }}
+                    className="px-3.5 py-1.5 rounded-full text-xs font-medium bg-cream/90 hover:bg-cream border border-archBorder/60 hover:border-espresso/50 text-ink-muted hover:text-espresso transition-all shadow-2xs text-left"
+                  >
+                    💡 {chip}
+                  </button>
+                ))}
               </div>
             </div>
           ) : (
@@ -391,9 +400,9 @@ export const ArchitectureTutor: React.FC = () => {
           {isLoading && (
             <div className="max-w-2xl p-6 rounded-3xl bg-cream-light/95 border border-archBorder shadow-arch-md animate-fadeIn">
               <div className="flex items-center gap-3">
-                <Loader2 className="w-5 h-5 animate-spin text-espresso" />
+                <Loader2 className="w-5 h-5 animate-spin text-espresso flex-shrink-0" />
                 <span className="text-sm font-serif text-ink">
-                  Synthesizing architectural analysis and historical citations with Gemini...
+                  {GENZ_VOICE.loadingMessages.tutor}
                 </span>
               </div>
             </div>
@@ -416,7 +425,7 @@ export const ArchitectureTutor: React.FC = () => {
                 type="text"
                 value={inputQuestion}
                 onChange={(e) => setInputQuestion(e.target.value)}
-                placeholder="Ask your architectural tutor anything (e.g. 'Explain Kahn's served and servant spaces')..."
+                placeholder="Ask about structural spans, facade physics, or why your cantilever is giving up 💀..."
                 disabled={isLoading}
                 className="flex-1 bg-transparent px-4 py-2.5 text-sm sm:text-base text-ink placeholder:text-taupe focus:outline-none"
               />

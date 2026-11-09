@@ -46,8 +46,8 @@ interface LoadingStateProps {
 }
 
 export const LoadingState: React.FC<LoadingStateProps> = ({
-  message = 'Synthesizing architectural analysis...',
-  subtext = 'Consulting historical precedents & tectonic principles',
+  message = 'Cooking up the architectural response... let him cook. 🔥',
+  subtext = 'Consulting Vitruvius and Frampton at 2 AM... hang tight, bestie.',
   className = '',
 }) => {
   return (

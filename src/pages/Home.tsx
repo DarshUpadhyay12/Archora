@@ -13,7 +13,8 @@ import { ArchitectureBackground } from '@/components/common/ArchitectureBackgrou
 import { PrimaryButton, SecondaryButton } from '@/components/common/Buttons';
 import { FeatureCard } from '@/components/common/FeatureCard';
 import { ArchitecturalBuilding3D } from '@/components/common/ArchitecturalBuilding3D';
-import { FEATURE_TOOLS, BRAND_NAME } from '@/data/mockData';
+import { FEATURE_TOOLS } from '@/data/mockData';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const Home: React.FC = () => {
   const [activePreviewTab, setActivePreviewTab] = useState<'precedents' | 'concepts' | 'jury'>('precedents');
@@ -41,19 +42,18 @@ export const Home: React.FC = () => {
               {/* Kicker badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-espresso text-xs font-semibold tracking-[0.16em] uppercase shadow-arch-sm">
                 <Sparkles className="w-3.5 h-3.5 text-espresso" />
-                <span>A WORKSPACE FOR ARCHITECT</span>
+                <span>{GENZ_VOICE.taglines.heroKicker}</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-6xl xl:text-7xl font-serif font-medium text-ink tracking-tight leading-[1.08]">
-                Design a <br />
-                <span className="italic font-normal text-espresso">Brighter</span> Tomorrow
+                Bro has a concept. <br />
+                <span className="italic font-normal text-espresso">Now explain it to the jury. 💀</span>
               </h1>
 
               {/* Supporting description */}
               <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-xl font-sans font-normal">
-                {BRAND_NAME} synthesizes historical architectural precedents, climate-responsive design concepts,
-                and rigorous jury critique preparation into one unified, intelligent studio environment.
+                {GENZ_VOICE.taglines.heroSubtitle}
               </p>
 
               {/* Action Buttons */}
@@ -226,13 +226,13 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-espresso/80">
-                Interactive 3D Workspace
+                Interactive 3D Playground
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-medium text-ink leading-tight">
-                Real-Time Tectonic & Spatial Projection(This is for timepass)
+                {GENZ_VOICE.taglines.model3dTitle}
               </h2>
               <p className="text-sm text-ink-muted leading-relaxed">
-                Interact directly with architectural massing, structural glass slabs, and passive solar atrium cores. Drag to orbit, toggle wireframe blueprints, or explode floor plates into distinct structural layers.
+                {GENZ_VOICE.taglines.model3dSubtitle}
               </p>
               <div className="pt-2 flex items-center gap-4">
                 <Link
@@ -294,23 +294,24 @@ export const Home: React.FC = () => {
 
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-espresso/80">
-                Studio Philosophy
+                Studio Philosophy · The Real Story
               </span>
               <h2 className="text-3xl sm:text-5xl font-serif font-medium text-ink leading-tight">
-                An Architecture Journal Transformed into an Intelligent Studio
+                An Architecture Studio That Actually Understands the Struggle
               </h2>
               <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-sans font-normal">
-                Architecture education requires balancing historical literacy, environmental responsiveness,
-                and tectonic clarity. Archora was built to respect this rigorous discipline — combining
-                the tactile elegance of vintage architectural etchings with modern generative design tools.
+                Architecture education requires balancing historical literacy, environmental physics,
+                and tectonic clarity while surviving 3 AM deadlines on iced coffee and pure hope. Archora was built
+                by students who survived the studio trenches — combining the tactile elegance of classic architectural
+                treatises with modern Gen-Z AI tools to keep your sanity intact.
               </p>
 
               <div className="space-y-3.5 pt-2">
                 {[
-                  'Deep architectural precedent synthesis from Gothic to Dravidian traditions',
-                  'Climate-responsive concept generation with real spatial and ventilation logic',
-                  'Jury defense preparation to anticipate tough structural and environmental questions',
-                  'Local studio persistence that safeguards student sketches and project notes'
+                  'Precedent research without the intimidating professor side-eye',
+                  'Climate-responsive concepts with real spatial logic (not just random buzzwords)',
+                  'Jury defense rehearsals to roast-proof your circulation before review day',
+                  'Local SQLite persistence so Revit crashes never destroy your studio notes'
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-espresso flex-shrink-0 mt-0.5" />

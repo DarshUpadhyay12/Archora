@@ -62,11 +62,11 @@ export const Contact: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Page Heading */}
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <PageHeading
-            kicker="STUDIO DIALOGUE & FEEDBACK"
-            title="Get in Touch"
-            description="Have questions, suggestions, or feedback on architectural tools? We would love to hear from architecture students, professors, and practitioners."
+            kicker="STUDIO DISPATCH · COMMUNITY"
+            title="Have feedback, feature requests, or studio trauma to share?"
+            description="We read every dispatch from fellow architecture students. Let us know how we can make Archora even more legendary."
           />
         </div>
 

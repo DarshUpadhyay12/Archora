@@ -58,11 +58,11 @@ export const HowItWorks: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Page Heading */}
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <PageHeading
-            kicker="STUDIO WORKFLOW ARCHITECTURE"
-            title="How Archora Works"
-            description="A clear and powerful four-step workflow designed to support your architectural studio journey from blank sheet to confident jury defense."
+            kicker="WORKFLOW EXPLAINER · STEP BY STEP"
+            title="How Archora turns studio panic into portfolio gold."
+            description="No convoluted setup. Just 1-click Windows launching, zero billing surprises, and intelligent studio companionship."
           />
         </div>
 

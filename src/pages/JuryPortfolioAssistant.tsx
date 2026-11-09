@@ -25,6 +25,7 @@ import { showToast } from '@/components/common/Toast';
 import { aiService } from '@/services/aiService';
 import { apiClient, SavedOutputResponse, ProjectResponse } from '@/services/apiClient';
 import { ContentType, VivaQuestion } from '@/types';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const JuryPortfolioAssistant: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -52,11 +53,11 @@ export const JuryPortfolioAssistant: React.FC = () => {
   const [deletingOutputId, setDeletingOutputId] = useState<string | null>(null);
 
   const contentTypes: { id: ContentType; label: string }[] = [
-    { id: 'jury-viva-questions', label: 'Jury & Viva Questions' },
-    { id: 'concept-statement', label: 'Concept Statement' },
+    { id: 'jury-viva-questions', label: 'Jury & Viva Questions 💀' },
+    { id: 'concept-statement', label: '100-Word Concept Statement' },
     { id: 'abstract', label: 'Project Abstract' },
-    { id: 'presentation-outline', label: '10-Min Presentation Arc' },
-    { id: 'project-description', label: 'Portfolio Description' },
+    { id: 'presentation-outline', label: '10-Min Presentation Arc (Don\'t Ramble)' },
+    { id: 'project-description', label: 'Portfolio Board Narrative' },
   ];
 
   // Load user projects
@@ -341,9 +342,9 @@ export const JuryPortfolioAssistant: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-archBorder/50">
           <div className="max-w-2xl">
             <PageHeading
-              kicker="CRITIQUE & JURY PREPARATION"
-              title="Jury & Portfolio Assistant"
-              description="Prepare confident answers for your studio viva, draft rigorous concept statements, and synthesize 10-minute presentation arcs from your project brief."
+              kicker={GENZ_VOICE.pageHeaders.jury.kicker}
+              title={GENZ_VOICE.pageHeaders.jury.title}
+              description={GENZ_VOICE.pageHeaders.jury.subtitle}
             />
           </div>
 
@@ -362,6 +363,29 @@ export const JuryPortfolioAssistant: React.FC = () => {
               Saved Archive {savedOutputs.length > 0 && `(${savedOutputs.length})`}
             </Button>
           </div>
+        </div>
+
+        {/* 3 Juror Archetype Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {GENZ_VOICE.juryCritiques.map((critique, idx) => (
+            <div
+              key={idx}
+              className="p-4 rounded-2xl glass-panel border border-archBorder/50 shadow-2xs space-y-1.5"
+            >
+              <div className="flex items-center justify-between text-xs font-semibold text-espresso">
+                <span>{critique.name}</span>
+                <span className="font-mono text-[10px] px-2 py-0.5 rounded-full bg-parchment/80 border border-archBorder/40 text-taupe">
+                  {critique.role}
+                </span>
+              </div>
+              <p className="text-xs font-serif font-semibold text-ink italic">
+                "{critique.vibe}"
+              </p>
+              <p className="text-[11px] text-ink-muted leading-tight">
+                {critique.description}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Workspace Layout */}
@@ -457,7 +481,10 @@ export const JuryPortfolioAssistant: React.FC = () => {
           <div className="lg:col-span-7 glass-panel shadow-glass rounded-3xl p-6 sm:p-8 min-h-[500px]">
             {isLoading ? (
               <div className="py-20 text-center">
-                <LoadingState message="Anticipating jury critique questions and drafting presentation narrative..." />
+                <LoadingState
+                  message={GENZ_VOICE.loadingMessages.jury}
+                  subtext="Simulating 3 harsh professors sharpening their red pens... roast-proofing in progress."
+                />
               </div>
             ) : hasGenerated ? (
               <div className="space-y-6 animate-fadeIn">
@@ -591,10 +618,10 @@ export const JuryPortfolioAssistant: React.FC = () => {
                 </div>
                 <div className="space-y-1.5">
                   <h3 className="font-serif text-2xl font-semibold text-ink">
-                    Jury Presentation Workspace
+                    Prepare for Academic Interrogation 💀
                   </h3>
                   <p className="text-xs sm:text-sm text-ink-muted max-w-md mx-auto leading-relaxed">
-                    Select an asset type and enter your project title on the left. Click <strong>Synthesize Defense & Copy</strong> to generate predicted questions, presentation outlines, or concept statements.
+                    Select an asset type and enter your project parameters on the left. Click <strong>Synthesize Defense & Copy</strong> to generate roast-proof answers, 10-minute presentation arcs, and bulletproof abstracts.
                   </p>
                 </div>
                 <div className="pt-2 flex flex-wrap justify-center gap-2 text-xs text-taupe font-mono">

@@ -3,7 +3,6 @@ import { ArchitectureBackground } from '@/components/common/ArchitectureBackgrou
 import { PageHeading } from '@/components/common/PageHeading';
 import { PrimaryButton } from '@/components/common/Buttons';
 import { Eye, Target, Heart } from 'lucide-react';
-import { BRAND_NAME } from '@/data/mockData';
 
 export const About: React.FC = () => {
   const pillars = [
@@ -43,11 +42,11 @@ export const About: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Page Heading */}
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <PageHeading
-            kicker="STUDIO ETHOS & ORIGIN"
-            title={`About ${BRAND_NAME}`}
-            description="Built by architecture students, driven by a passion for design, historical literacy, and architectural integrity."
+            kicker="STUDIO ETHOS & ORIGIN · BUILT IN THE TRENCHES"
+            title="Built by architecture students who survived the studio trenches."
+            description="We combined the timeless craft of classical architectural treatises with modern Gen-Z AI tools to make design studio education inspiring, accessible, and 100% free."
           />
         </div>
 

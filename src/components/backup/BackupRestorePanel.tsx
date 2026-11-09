@@ -800,7 +800,7 @@ export const BackupRestorePanel: React.FC = () => {
                 </span>
               </div>
               <p className="text-xs text-ink-muted mt-1">
-                Store remote architectural snapshots directly inside your designated Google Drive folder.
+                Cloud backup because losing your project is not character development 💀 Keep your drawings safe before submission panic.
               </p>
             </div>
 

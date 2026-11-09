@@ -19,6 +19,7 @@ import { UserProfile, AppSettings } from '@/types';
 import { AiUsageDashboard } from '@/components/usage/AiUsageDashboard';
 import { BackupRestorePanel } from '@/components/backup/BackupRestorePanel';
 import { pwaService } from '@/services/pwaService';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const ProfileSettings: React.FC = () => {
   const navigate = useNavigate();
@@ -76,9 +77,9 @@ export const ProfileSettings: React.FC = () => {
         {/* Page Heading */}
         <div className="max-w-2xl">
           <PageHeading
-            kicker="WORKSPACE CONFIGURATION"
-            title="Profile & Settings"
-            description="Manage your studio preferences, monitor AI usage metrics, and handle local & cloud backups."
+            kicker={GENZ_VOICE.pageHeaders.profile.kicker}
+            title={GENZ_VOICE.pageHeaders.profile.title}
+            description={GENZ_VOICE.pageHeaders.profile.subtitle}
           />
         </div>
 

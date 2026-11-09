@@ -54,11 +54,11 @@ export const GalleryShowcase: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Page Heading */}
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <PageHeading
-            kicker="ARCHITECTURAL PRECEDENTS & ETCHINGS"
-            title="Inspiration for Your Next Idea"
-            description="Explore a curated collection of architectural monuments, pen-and-ink etchings, and tectonic precedents across European and Indian traditions."
+            kicker="PORTFOLIO SHOWCASE · DESIGN EXCELLENCE"
+            title="Curated studio sheets and tectonic precedents."
+            description="Explore copperplate architectural linework, classical orders, and student precedents crafted within Archora."
           />
         </div>
 

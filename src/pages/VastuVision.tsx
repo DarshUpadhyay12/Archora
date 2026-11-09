@@ -21,6 +21,7 @@ import {
   vastuClientService,
 } from '@/services/vastuService';
 import { apiClient, ProjectResponse } from '@/services/apiClient';
+import { GENZ_VOICE } from '@/config/genzVoice';
 
 export const VastuVision: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'planner' | 'compass' | 'knowledge' | 'saved'>('planner');
@@ -184,17 +185,17 @@ export const VastuVision: React.FC = () => {
         <div className="relative z-10 max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-stat-card border border-bronze/40">
             <Compass className="w-3.5 h-3.5 text-espresso animate-spin-slow" />
-            <span className="text-xs font-serif font-bold text-espresso tracking-wide">
-              VastuVision • Traditional Architectural Shastra
+            <span className="text-xs font-serif font-bold text-espresso tracking-wide uppercase">
+              {GENZ_VOICE.pageHeaders.vastu.kicker}
             </span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-espresso tracking-tight">
-            Indian Vastu Shastra Spatial Planner
+            {GENZ_VOICE.pageHeaders.vastu.title}
           </h1>
 
           <p className="text-sm sm:text-base text-ink font-sans leading-relaxed">
-            Explore authentic classical Indian architectural principles (*Manasara*, *Mayamata*, *Brihat Samhita*) with deterministic directional orientation, bioclimatic rationale, and AI architectural commentary.
+            {GENZ_VOICE.pageHeaders.vastu.subtitle}
           </p>
 
           {/* Project Linkage Selector */}
